@@ -27,9 +27,7 @@ export default class ResForm extends Component {
       time: time,
       number: number
     }
-    apiCalls.addReservation(postRes)
-      .then(res => handleClick(res))
-      .catch(error => console.log(error))
+    handleClick(postRes)
   }
   
 

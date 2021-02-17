@@ -12,11 +12,11 @@ class App extends Component {
     }
   }
  
-  handleClick = (data) => {
-     console.log(data)
-      // .then(response => response.json())
-      // .then(data => this.setState({ reservations: [...this.state.reservations, data] }))
-      // .catch(error => console.log(error))
+  handleClick = (info) => {
+     apiCalls.addReservation(info)
+      .then(response => response.json())
+      .then(data => this.setState({ reservations: [...this.state.reservations, data] }))
+      .catch(error => console.log(error))
   }
 
   componentDidMount = () => {
