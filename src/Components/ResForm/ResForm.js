@@ -9,7 +9,7 @@ export default class ResForm extends Component {
       name: '',
       date: '',
       time: '',
-      number:'',
+      number: '',
     }
   }
   updateForm = event => {
@@ -27,7 +27,9 @@ export default class ResForm extends Component {
       time: time,
       number: number
     }
-    return apiCalls.addReservation(postRes)
+    apiCalls.addReservation(postRes)
+      .then(res => handleClick(res))
+      .catch(error => console.log(error))
   }
   
 
@@ -58,7 +60,7 @@ export default class ResForm extends Component {
         />
         <input 
           name="number"
-          type="text"
+          type="number"
           placeholder="number of guests"
           value={number}
           onChange={this.updateForm}

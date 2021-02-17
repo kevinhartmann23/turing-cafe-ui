@@ -13,7 +13,7 @@ const apiCalls = {
       body: JSON.stringify(info)
     }
     return fetch(baseUrl, options)
-      .catch(error => console.log(error))
+      .catch(error => console.log(error.body))
   }
 }
 
