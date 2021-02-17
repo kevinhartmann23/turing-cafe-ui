@@ -3,9 +3,10 @@
 .App {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-image: url('../assets/cafe-img.jpeg');
-  width: 100%;
+  background-image: url('../../assets/cafe-img.jpeg');
+  width: 100vw;
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
