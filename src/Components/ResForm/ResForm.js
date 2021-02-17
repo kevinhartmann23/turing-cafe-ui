@@ -12,21 +12,24 @@ export default class ResForm extends Component {
       number:'',
     }
   }
-  
   updateForm = event => {
     this.setState({ [event.target.name]: event.target.value })
   }
 
-  submitReservation = event => {
+  
+  submitReservation = (event) => {
+    event.preventDefault()
+    const {handleClick} = this.props
+    const { name, date, time, number } = this.state
     const postRes = {
-      name: this.state.name,
-      date: this.state.date,
-      time: this.state.time,
-      number: this.state.number
+      name: name,
+      date: date,
+      time: time,
+      number: number
     }
-    apiCalls.addReservation(postRes)
-    this.props.updateReservations()
+    return apiCalls.addReservation(postRes)
   }
+  
 
   render() {
     const { name, date, time, number} = this.state

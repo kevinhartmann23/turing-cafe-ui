@@ -11,14 +11,17 @@ class App extends Component {
       reservations: []
     }
   }
-  updateReservations = () => {
+ 
+  handleClick = () => {
     apiCalls.allReservations()
       .then(data => this.setState({ reservations: data }))
+      .catch(error => console.log(error))
   }
 
   componentDidMount = () => {
    apiCalls.allReservations()
      .then(data => this.setState({reservations: data}))
+     .catch(error => console.log(error))
   }
   
   render() {
@@ -26,7 +29,7 @@ class App extends Component {
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-          <ResForm onClick={this.updateReservations}/>
+          <ResForm onClick={this.handleClick}/>
         </div>
         <div className='resy-container'>
           <ReservationDisplay data={this.state.reservations}/>

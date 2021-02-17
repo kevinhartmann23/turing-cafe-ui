@@ -18,3 +18,14 @@
   font-family: 'Pacifico', cursive;
   font-size: 50px;
 }
+
+h1 {
+  height: 10%;
+}
+.resy-form {
+  height: 20%;
+}
+
+.resy-container {
+  height: 70%;
+}

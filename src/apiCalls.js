@@ -4,7 +4,7 @@ const apiCalls = {
   allReservations() {
     return fetch(baseUrl)
       .then(response => response.json())
-      .catch(error => error)
+      .catch(error => console.log(error))
   },
 
   addReservation(info) {
