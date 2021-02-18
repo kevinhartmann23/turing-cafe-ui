@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import apiCalls from '../../apiCalls'
 import './ResForm.css'
 
 export default class ResForm extends Component {
@@ -16,18 +15,29 @@ export default class ResForm extends Component {
     this.setState({ [event.target.name]: event.target.value })
   }
 
+  resetForm = () => {
+    this.setState({
+      name: '',
+      date: '',
+      time: '',
+      number: '',
+    })
+  }
+
   
   submitReservation = (event) => {
     event.preventDefault()
     const {handleClick} = this.props
     const { name, date, time, number } = this.state
     const postRes = {
+      // id: Date.now(),
       name: name,
       date: date,
       time: time,
-      number: number
+      number: parseInt(number)
     }
     handleClick(postRes)
+    this.resetForm()
   }
   
 

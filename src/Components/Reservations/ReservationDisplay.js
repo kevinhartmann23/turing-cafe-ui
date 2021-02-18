@@ -1,9 +1,9 @@
 import React from 'react'
 import Reservation from './Reservation'
 
-const ReservationDisplay = ({data}) => {
+const ReservationDisplay = ({data, handleClick}) => {
   const reservationInfo = data.map(reservation => {
-    return <Reservation props={reservation} key={reservation.id}/>
+    return <Reservation props={reservation} handleClick={handleClick} key={reservation.id}/>
   })
   
   return (

@@ -10,10 +10,17 @@ const apiCalls = {
   addReservation(info) {
     const options = {
       method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify(info)
     }
     return fetch(baseUrl, options)
       .catch(error => console.log(error.body))
+  },
+
+  deleteReservation(id){
+    return fetch(`${baseUrl}/${id}`, {method: "DELETE"})
   }
 }
 
